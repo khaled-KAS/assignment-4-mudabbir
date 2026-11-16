@@ -1,0 +1,924 @@
+
+* {
+ box-sizing: border-box;
+}
+
+@font-face {
+ font-family: "san";
+ src: url(../fonts/Roboto-VariableFont_wdth\,wght.ttf);
+}
+
+:root {
+  --mainColor: #4134DC;
+  --fontColor: #7C8391;
+}
+body {
+ margin: 0;
+ font-family: 'san';
+}
+
+
+
+a {
+ text-decoration: none;
+ color: black;
+}
+
+a,
+span {
+ display: inline-block;
+}
+ul{
+ list-style-type: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+button{
+  cursor: pointer;
+}
+h1,
+p{
+ margin: 0;
+ padding: 0;
+}
+/* global class */
+.d-flex {
+  display: flex;
+}
+
+.rote-5{
+  transform: rotate(5deg);
+}
+.j-center {
+  justify-content: center;
+}
+
+.text-center {
+  text-align: center;
+}
+.c-red{
+  color: red !important;
+}
+.c-green{
+  color: green !important;
+}
+.stylenum{
+  padding: 20px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+  border: 4px solid #ECEEF0;
+}
+/*side */
+.container{
+ display: flex;
+}
+.container .side{
+ width: 15%;
+ padding: 20px;
+}
+.container .content{
+  position:sticky;
+  top: 20px;
+  bottom: 0;
+  right: 0;
+  
+}
+.container   .logo{
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.container  .catchicon{
+  padding: 16px ;
+  border-radius: 15px;
+  background-color: var(--mainColor);
+}
+.container  .logo i{
+  color: white;
+}
+.container  .logo h1{
+  font-size: 36px;
+  font-weight: 700;
+  color: #101828;
+}
+.container  .logo span{
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  color: #4a5565;
+}
+.container .side .card{
+  display: flex;
+}
+.container .side .card {
+  display: flex;
+  color: var(--fontColor);
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  margin-block: 5px;
+}
+.container .side .card:hover{
+  background-color: #F9FAFB;
+}
+.container .side .card span{
+font-size: 16px;
+font-weight: 600;
+line-height: 24px;
+}
+
+.container .side .cardstat.active{
+  color: var(--mainColor);
+  background-color: #EFF6FF;
+  color: #1447e6;
+}
+.container .side h3{
+font-size: 14px;
+font-weight: 600;
+line-height: 20px;
+color: var(--fontColor);
+}
+.container .side .cardp .catchicon{
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+
+.container .side .cardp  span{
+font-size: 14px;
+font-weight: 500;
+}
+.container .side .cardp .catchicon.send-icon {
+  background-color: #DBE8FC;
+  color: #1447e6;
+}
+
+.container .side .cardp .catchicon.add-icon {
+  background-color: #D5F3E1;
+  color:green;
+}
+
+.container .side .cardp .catchicon.bill-icon {
+  background-color: #D5F3E1;
+  color: purple;
+}
+
+.container .side .cardp .catchicon.invest-icon {
+  background-color: #FCE5D5;
+  color: orange;
+}
+@media (min-width: 767px) and (max-width: 1020px) {
+  
+  .container .side span,
+  .container .side p,
+  .container .side h1,
+  .container .side h3,
+  .container .side h4 {
+    display: none;
+  }
+  
+  .container .side {
+    display: flex;
+    flex-direction: column;
+align-items: center;
+padding: 10px 0  ;
+}
+}
+@media (max-width: 767px)  {
+  
+  .container .side {
+    display: none;
+  }
+}
+/* start main */
+.container main{
+  width: 85%;
+  padding: 20px;
+  background-color:#F9FAFB; 
+  display: grid;
+  grid-template-rows: min-content repeat(6, auto);
+  grid-template-columns:  repeat(9, minmax(0,1fr));
+  grid-template-areas: 
+  "header header header header header header header header header "
+  "one one one two two two  three three three "
+  "four four four five five five five five five  "
+  "six six six five five five five five five  "
+  "seven seven seven eight eight eight nine nine nine "
+  "seven seven seven ten ten ten nine nine nine ";
+  gap: 10px;
+}
+/* start header */
+main .header{
+  grid-area: header;
+  background-color:#d9e3f6;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px;
+}
+main .header .right{
+  flex:1;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+main .header .statue{
+  padding: 10px 20px;
+  background-color: #F0FDF4;
+  border-radius: 10px;
+}
+main .header  .statue span{
+font-size: 14px;
+font-weight: 500;
+line-height: 20px;
+color: #008236;
+position: relative;
+}
+main .header  .statue span::before{
+  content: "";
+  position: absolute;
+  left: 35px;
+  top: 5px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: green;
+}
+main .header .left{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: end;
+  flex:1;
+}
+main .header .left .icons{
+display: flex;
+gap: 10px;
+}
+main .header .left i{
+    padding: 10px 15px;
+    color: var(--fontColor);
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #F3F4F6;
+    position: relative;
+}
+main .header .left i:nth-child(2)::after{
+  content: "2";
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  color: #fff;
+  background-color: red;
+}
+
+main .header .left .inf{
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+  align-items: center;
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+main .header .left p{
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #101828;
+}
+main .header .left .inf span{
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  color: #6a7282;
+}
+main .header .left .inf img{
+  width: 40px;
+  border-radius: 10px;
+}
+
+main .header .all{
+  display: none;
+}
+@media (max-width: 666px) {
+main .header{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+}
+main .header .right .statue,
+main .header .left .inf span,
+main .header .left .inf p{
+  display: none;
+}
+main .header .left{
+  justify-content: space-between;
+  width: 100%;
+}
+main .header .all{
+  display: block;
+  width: 100%;
+  background-color: #F3F4F6;
+  text-align: center;
+}
+}
+/* start cards arrwo */
+main .one{
+  grid-area: one;
+  
+}
+main .two{
+  grid-area: two;
+}
+main .three{
+  grid-area: three;
+}
+main .cardArrow p{
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  color: #6a7282;
+}
+main .cardArrow h3{
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 40px;
+  color: #101828;
+  margin: 0;
+}
+main .cardArrow .arrow{
+  font-size: 14px;
+  font-weight: 600;
+line-height: 20px;
+color: #00a63e;
+}
+/* end cards arrwo */
+/* start four */
+main .four{
+  grid-area: four;
+}
+main .four h3{
+font-size: 18px;
+font-weight: 600;
+line-height: 28px;
+color: #101828;
+margin: 5px;
+}
+main .four .card {
+  background-color: #EFF6FF;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 10px ;
+  border-left: 3px solid #2B7FFF;
+  margin-bottom :10px ;
+}
+main .four .card:nth-child(3) {
+  border-left: 3px solid green;
+}
+main .four .card i{
+width: 40px;
+height: 40px;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 50%;
+background-color: #DBEAFE;
+color: blue;
+}
+
+main .four .card .text{
+  display: flex;
+  flex-direction: column;
+  align-items: f;
+  flex: start;
+}
+
+main .four .text h4{
+font-size: 14px;
+font-weight: 700;
+line-height: 20px;
+color: #101828;
+margin: 0;
+}
+main .four .text p{
+font-size: 12px;
+font-weight: 600;
+line-height: 16px;
+color: #4a5565;
+}
+main .four .text span{
+font-size: 12px;
+font-weight: 600;
+color: #6a7282;
+margin-top: 5px;
+}
+main .four span{
+font-size: 12px;
+font-weight: 700;
+color: #155dfc;
+}
+main .four button{
+font-size: 16px;
+font-weight: 600;
+color: #000;
+width: 100%;
+padding: 20px ;
+border: none; 
+border-top: 1px solid #F9FAFB;
+background-color: white;
+color: #1447E7;
+margin-top: 5px;
+}
+
+/* end four */
+/* start five */
+main .five{
+  grid-area: five;
+}
+
+main .five table{
+  width: 100%;
+  border-spacing: 0 30px;
+} 
+main .five table thead tr th{
+  text-align: start;
+  border-bottom: 1px solid #d8dbde;
+}
+main .five table tbody tr td{
+  padding: 10px 0;
+  border-bottom: 1px solid #d8dbde;
+  
+}
+main .five table  td .inf{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+main .five table  td .inf img{
+  width: 40px;
+  border-radius: 50%;
+}
+main .five table  td .inf p{
+font-size: 14px;
+font-weight: 500;
+color: #101828;
+}
+main .five table  td .inf span{
+  font-size: 12px;
+font-weight: 600;
+color: #6a7282;
+}
+main .five table .down {
+  display: flex;
+  max-width: 60%;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background-color: #DBFCE7;
+  color: green;
+}
+
+/* end five */
+/* start six */
+main .six{
+  grid-area: six;
+  background-color: white;
+  text-align: center;
+}
+main .headerCard{
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom:10px ;
+}
+main .headerCard h3{
+  margin:0 ;
+font-size: 18px;
+font-weight: 600;
+}
+main .headerCard span{
+font-size: 18px;
+font-weight: 600;
+color: gray;
+transition: 0.4s;
+}
+main .headerCard .arrow i{
+  color: gray;
+  transition: 0.4s;
+}
+main .headerCard .arrow:hover i,
+main .headerCard .arrow:hover span{
+  color: black;
+  cursor: pointer;
+}
+main .six h5{
+font-size: 30px;
+font-weight: 700;
+margin: 0 auto;
+}
+main .six p{
+font-size: 14px;
+font-weight: 600;
+color: #6a7282;
+
+}
+main .six .cards{
+display: flex;
+flex-wrap: wrap;
+gap: 5px;
+margin-top: 5px;
+justify-content: space-between;
+align-items:center;
+}
+main .six .cards .cardstat{
+background-color: #dce2e8;
+padding: 20px;
+width: 48%;
+border-radius: 10px;
+}
+main .six .cards .cardstat i{
+  padding: 10px 20px ;
+  border-radius: 10px;
+  margin: 5px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #bed6f5;
+  color: #155DFC;
+}
+main .six .cards .cardstat span{
+font-size: 16px;
+font-weight: 600;
+color: #101828;
+margin-block:5px ;
+}
+main .six .cards .cardstat p:last-child{
+font-size: 12px;
+font-weight: 600;
+color: #fb2c36;
+}
+
+
+/* end six */
+/* start seven */
+main .seven{
+  grid-area: seven;
+}
+main .seven .big{
+  padding: 20px;
+  background-color: #EFF5FF;
+  border-radius: 20px;
+}
+  .up {
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+margin-bottom: 5px;
+}
+main .seven .big p{
+  font-size: 18px;
+  font-weight: 500;
+  color: #155dfc;
+
+}
+main .seven .big h5{
+  margin-block: 5px;
+  font-size: 24px;
+font-weight: 700;
+color: #1c398e;
+}
+main .seven .big .left span{
+font-size: 14px;
+font-weight: 600;
+color: #6a7282;
+}
+main .seven .big .left p{
+font-size: 18px;
+font-weight: 600;
+color: #00a63e;
+}
+main .seven  .inf{
+  margin-top:10px ;
+  display: flex;
+  justify-content: space-between;
+}
+main .seven .big  p{
+font-size: 14px;
+font-weight: 600;
+color: #4a5565;
+}
+main .seven  .pres{
+  width: 100%;
+  margin-block: 5px;
+  border-radius: 10px;
+  padding: 5px;
+  background-color: gray;
+  position: relative;
+}
+main .seven  .pres::after{
+  content: "";
+  border-radius: 10px;
+  padding: 5px;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 82.5%;
+  background-color: var(--mainColor);
+}
+main  .card{
+  padding: 20px;
+  border-radius: 20px;  
+  transition: 0.4s;
+  margin: 10px;
+  background-color: #F9FAFB;
+}
+main .seven .card:hover{
+  background-color: #F5F6F8;
+  box-shadow:  2px 5px #d3cdcd;
+  transform: scale(1.02);
+}
+ .card .up .right{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+main  .card .up .right .catchicon {
+ padding: 10px;
+ background-color: #FFEDD4;
+ color: #F77235;
+}
+main  .card .up .right span{
+font-size: 18px;
+font-weight: 500;
+}
+main  .card .up .right p{
+font-size: 12px;
+font-weight: 600;
+color: #6a7282; 
+}
+main  .card .up .left p{
+font-size: 16px;
+font-weight: 600;
+color: #101828; 
+}
+main  .card .up .left span{
+  padding: 5px 10px;
+font-size: 12px;
+font-weight: 500;
+color: #166534;
+  border-radius: 10px;
+  background-color: #FEE2E2;
+}
+main .seven .card .pres::after{
+  width: 50%;
+  background-color: #FF6900;
+}
+
+/* end seven */
+/* start eight */
+main .eight{
+  grid-area: eight;
+  /* align-self:self-start ; */
+}
+main .eight .spans{
+  margin: 20px ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+main .eight .spans span{
+font-size: 12px;
+font-weight: 600;
+color: #64748b;
+position: relative;
+}
+
+main .eight .weeks {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 20px;
+  margin: 30px;
+}
+main .eight .weeks .week{
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: end;
+  margin: 20px auto;
+}
+main .eight .weeks .week .colums{
+  display: flex;
+  gap: 5px;
+  justify-content: space-between;
+  align-items: end;
+}
+main .eight .weeks .week .colum{
+  bottom: 20px;
+  width: 15px;
+  transition: 0.4s;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+main .eight .weeks .week .colum.green{
+  background-color: green;
+  height: 80px;
+}
+main .eight .weeks .week .colum.green:hover{
+  background-color: #40C79A;
+}
+main .eight .weeks .week .colum.red{
+  background-color: red;
+  height: 50px;
+}
+main .eight .weeks .week .colum.red:hover{
+  background-color: #F26969;
+}
+
+main .eight .weeks .week::after{
+  content: "";
+  position: absolute;
+}
+
+/* end eight */
+/* start nine */
+main .nine{
+  grid-area: nine;
+}
+main .nine .flip {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.8;
+  transform-style: preserve-3d;
+  transition:  0.6s;
+  margin: 20px 0;
+}
+main .nine .flip .front,
+main .nine .flip .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  backface-visibility: hidden;
+  border-radius: 10px;
+}
+main .nine .flip .front{
+  background-color: midnightblue;
+  padding: 20px;
+  color: white;
+  border-radius: 10px;
+}
+main .nine .flip .front .logo{
+  display: flex;
+  justify-content: space-between;
+}
+main .nine .flip .front .logo .shape{
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  padding: 10px;
+  color: black;
+}
+main .nine .flip .front  .footer{
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+}
+main .nine .flip .back {
+  transform: rotateY(180deg);
+  background-color: #0D1522;
+  padding: 20px;
+  border-radius: 10px;
+}
+main .nine .flip:hover {
+  transform: rotateY(180deg);
+}
+main .nine .flip .back .coloren{
+width: 100%;
+padding: 20px;
+background-image: linear-gradient( to right ,black 0 40%,#2A2A2A 100%);
+border-radius: 5px;
+}
+main .nine .flip .back p{
+font-size: 10px;
+font-weight: 600;
+letter-spacing: 0.6px;
+color: #ffffff7a;
+margin-block: 5px;
+}
+main .nine .flip .back .num{
+  width: 100%;
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+main .nine .flip .back .num span{
+  padding:  5px;
+  width: 80%;
+font-size: 12px;
+font-weight: 500;
+background-color: gray;
+}
+main .nine .flip .back .num p{
+  color: black;
+  margin-left: auto;
+}
+main .nine .flip .back p.number{
+  padding: 10px 20px;
+  background-color: white;
+  width: 20px;
+  color: black;
+  text-align: center;
+  margin-right: auto;
+  margin-left: 10px;
+  border-radius: 10px;
+}
+
+/* end nine */
+/* start ten */
+main .ten{
+  grid-area: ten;
+}
+main .ten .card{
+  margin-block: 10px;
+}
+main .ten .card .up{
+  align-items: center;
+
+}
+main .ten .card .up .catchicon{
+  background-color: #DBEAFE;
+}
+main .ten .card .up i{
+  color: #155DFC;
+}
+/* end ten */
+
+
+@media  (max-width: 1020px) {
+  
+  .container main{
+  width: 95%;
+   grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-areas: 
+  "header header header header header header  "
+  "one one  two two   three three  "
+  "four four four eight eight eight   "
+  " five five five five five five  "
+  " five five five five five five  "
+  "   nine nine nine  seven seven seven"
+  "six six six ten ten ten  ";
+  gap: 10px;
+}
+}
+
+@media (max-width: 767px)  {
+  
+   .container main{
+  width: 100%;
+   grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-areas: 
+  "header header header  "
+  "one one   one    "
+  "two two two"
+  "three three three "
+  "four four four    "
+  "eight eight eight"
+  " five five five   "
+  " five five five "
+  "  nine nine nine"
+  "   seven seven seven"
+  "six six six"
+  " ten ten ten  ";
+  gap: 10px;
+}
+}
